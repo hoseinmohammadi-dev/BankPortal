@@ -24,6 +24,8 @@ main {
         position: relative;
         border-radius: 20px;
         padding: 20px;
+        transform-style: preserve-3d;
+
 
         >form {
             width: 100%;
@@ -79,7 +81,7 @@ main {
                         border: .5px solid black;
                         padding: 2%;
                     }
-                   
+
 
                 }
 
@@ -99,13 +101,163 @@ main {
             width: 480px;
             height: 280px;
             position: absolute;
-            top: -145px;
-            left: 70px;
+            /* top: -145px;
+            left: 70px; */
             z-index: 999;
             background-color: black;
             border-radius: 20px;
+            background-image: url(img/water-5967218_1280.jpg);
+            background-size: cover;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            transition: 2s;
+            backface-visibility: hidden;
+
+
+
+
+            >div {
+                width: 93%;
+                height: 25%;
+                display: flex;
+
+                &:nth-of-type(1) {
+                    justify-content: space-between;
+                }
+
+                &:nth-of-type(2) {
+                    justify-content: space-around;
+
+                    >input {
+                        border: 1px solid black;
+                        width: 23%;
+                        border-radius: 15px;
+                        height: 80%;
+                        background-color: rgba(255, 255, 255, 0.527);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    justify-content: space-between;
+                    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.438), transparent);
+
+
+                    >div {
+
+                        &:first-of-type {
+                            width: 80%;
+                            /* border: 2px solid white; */
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            color: white;
+
+                            >strong {}
+
+                            >span {}
+                        }
+
+                        &:last-of-type {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            width: 20%;
+                            color: white;
+                        }
+
+                    }
+                }
+            }
 
 
         }
+
+        #cardBoxBack {
+            z-index: 50;
+            background-image: url(img/marble-effect-7808196_1280.jpg);
+            width: 480px;
+            height: 280px;
+            position: absolute;
+            top: -145px;
+            left: 70px;
+
+            border-radius: 20px;
+
+            background-size: cover;
+
+            transition: 2s;
+            /* backface-visibility: hidden; */
+        }
     }
+}
+
+.showBack {
+    transform: rotateY(180deg);
+}
+
+.showBack2 {
+    transform: rotateY(-180deg);
+}
+
+.z {
+    z-index: 100000;
+}
+
+
+
+
+
+
+.card-container {
+    width: 480px;
+    height: 280px;
+    position: absolute;
+    top: -145px;
+    left: 70px;
+    perspective: 1000px;
+}
+
+.card-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-size: cover;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 1s ease;
+}
+
+.card-front {
+    background-image: url(img/water-5967218_1280.jpg);
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    background-image: url(img/marble-effect-7808196_1280.jpg);
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.card-container.flipped .card-front {
+    transform: rotateY(180deg);
+}
+
+.card-container.flipped .card-back {
+    transform: rotateY(360deg);
+}
+
+
+p#cvvShow {
+    width: 100%;
+    height: 50px;
+    background-color: white;
 }
