@@ -11,11 +11,42 @@
 <body>
     <main>
         <section>
-            <div class="card-box"></div>
+            <div class="card-container">
+                <div class="card-box card-front">
+                    <div></div>
+                    <div>
+                        <input type="text" readonly maxlength="4">
+                        <input type="text" readonly maxlength="4">
+                        <input type="text" readonly maxlength="4">
+                        <input type="text" readonly maxlength="4">
+                    </div>
+                    <div>
+                        <div>
+                            <span>Card Holder</span>
+                            <strong id="holder">FULL NAME</strong>
+                        </div>
+                        <div>
+                            <span>expires</span>
+                            <div>
+                                <span id="monthShow">00</span>/ <span id="yearsShow">00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-box card-back">
+                    <div></div>
+                    <div>
+                        <span>cvv</span>
+                        <p id="cvvShow"></p>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+
             <form action="">
                 <div class="card-number">
                     <label for="">card number</label>
-                    <input type="text">
+                    <input type="text" maxlength="16" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                 </div>
                 <div class="card-holder">
                     <label for="">card holders</label>
@@ -24,7 +55,7 @@
                 <div class="expiration-date">
                     <label for="">expiration date</label>
                     <div>
-                        <select name="" id="">
+                        <select name="" id="month">
                             <option value="month" disabled selected>month</option>
                             <option value="01">01</option>
                             <option value="02">02</option>
@@ -38,21 +69,21 @@
                             <option value="10">10</option>
                             <option value="11">11</option>
                             <option value="12">12</option>
-                    </select>
-                    <select name="" id="" >
-                        <option value="" disabled selected>years</option>
-                        <option value="">2021</option>
-                        <option value="">2022</option>
-                        <option value="">2023</option>
-                        <option value="">2024</option>
-                        <option value="">2025</option>
-                        <option value="">2026</option>
-                        <option value="">2027</option>
-                        <option value="">2028</option>
-                        <option value="">2029</option>
-                        <option value="">2030</option>
-                    </select>
-                    <input type="text" id="cvv">
+                        </select>
+                        <select name="" id="years">
+                            <option value="" disabled selected>years</option>
+                            <option value="21">2021</option>
+                            <option value="22">2022</option>
+                            <option value="23">2023</option>
+                            <option value="24">2024</option>
+                            <option value="25">2025</option>
+                            <option value="26">2026</option>
+                            <option value="27">2027</option>
+                            <option value="28">2028</option>
+                            <option value="29">2029</option>
+                            <option value="30">2030</option>
+                        </select>
+                        <input type="text" id="cvv">
                     </div>
                 </div>
                 <input type="submit">
