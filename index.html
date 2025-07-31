@@ -13,7 +13,10 @@
         <section>
             <div class="card-container">
                 <div class="card-box card-front">
-                    <div></div>
+                    <div>
+                        <img src="img/chip.png" alt="">
+                        <img src="img/visa.png" alt="">
+                    </div>
                     <div>
                         <input type="text" readonly maxlength="4">
                         <input type="text" readonly maxlength="4">
@@ -28,7 +31,7 @@
                         <div>
                             <span>expires</span>
                             <div>
-                                <span id="monthShow">00</span>/ <span id="yearsShow">00</span>
+                                <span id="monthShow">00</span> / <span id="yearsShow">00</span>
                             </div>
                         </div>
                     </div>
@@ -36,10 +39,12 @@
                 <div class="card-box card-back">
                     <div></div>
                     <div>
-                        <span>cvv</span>
-                        <p id="cvvShow"></p>
+                         <span>cvv</span>
+                        <p id="cvvShow"></p> 
                     </div>
-                    <div></div>
+                    <div>
+                      <img src="img/visa.png" alt="">
+                    </div>
                 </div>
             </div>
 
@@ -83,7 +88,7 @@
                             <option value="29">2029</option>
                             <option value="30">2030</option>
                         </select>
-                        <input type="text" id="cvv">
+                        <input type="text" id="cvv" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                     </div>
                 </div>
                 <input type="submit">
