@@ -8,8 +8,8 @@
 main {
 
     width: 100%;
-    height: 150vh;
-    background-image: linear-gradient(90deg, rgba(5, 184, 255, 1) 0%, rgba(114, 173, 232, 1) 0%, rgba(30, 85, 227, 1) 100%);
+    height: 170vh;
+    background-image: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
     display: flex;
     justify-content: center;
 
@@ -53,6 +53,14 @@ main {
                     outline: none;
                     border: .5px solid black;
                     padding: 2%;
+                    outline: none;
+                    transition: .4s;
+
+                    &:focus {
+                        border-color: #631418;
+                        box-shadow: 0 0 8px #1605ff55;
+                        background-color: #fff;
+                    }
                 }
             }
 
@@ -62,6 +70,11 @@ main {
                 flex-direction: column;
                 flex-wrap: wrap;
                 margin-block: 40px;
+
+                >label {
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                }
 
                 >div {
                     display: flex;
@@ -82,38 +95,58 @@ main {
                         padding: 2%;
                     }
 
+                    >input{
+                         outline: none;
+                    transition: .4s;
+
+                    &:focus {
+                        border-color: #631418;
+                        box-shadow: 0 0 8px #1605ff55;
+                        background-color: #fff;
+                    }
+                    }
 
                 }
-
 
             }
 
             >input {
                 width: 80%;
                 height: 40px;
-                border-radius: 25px;
                 display: block;
                 margin: auto;
+                background-image: linear-gradient(to right, #94202f, #2a5298);
+                color: #fff;
+                padding: 12px 24px;
+                font-size: 1rem;
+                font-weight: 600;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 6px 15px rgba(30, 60, 114, 0.3);
             }
+
+
         }
 
         .card-box {
             width: 480px;
             height: 280px;
             position: absolute;
-            /* top: -145px;
-            left: 70px; */
             z-index: 999;
             background-color: black;
             border-radius: 20px;
-            background-image: url(img/water-5967218_1280.jpg);
-            background-size: cover;
             display: flex;
             justify-content: space-around;
             align-items: center;
             flex-direction: column;
             transition: 2s;
             backface-visibility: hidden;
+            background-image: linear-gradient(to top, rgba(55, 0, 255, 0.438), transparent);
+            background-image: url(img/25.jpeg);
+            object-fit: cover;
+
 
 
 
@@ -125,17 +158,30 @@ main {
 
                 &:nth-of-type(1) {
                     justify-content: space-between;
+                    align-items: center;
+                    width: 90%;
+
+                    >img {
+                        width: 110px;
+                        height: 60px;
+
+                        &:nth-of-type(1) {
+                            width: 80px;
+                        }
+                    }
                 }
 
                 &:nth-of-type(2) {
                     justify-content: space-around;
 
                     >input {
-                        border: 1px solid black;
+                        border: none;
                         width: 23%;
                         border-radius: 15px;
                         height: 80%;
-                        background-color: rgba(255, 255, 255, 0.527);
+                        background-color: rgba(255, 255, 255, 0.298);
+                        color: white;
+                        font-size: 24px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -145,7 +191,6 @@ main {
 
                 &:nth-of-type(3) {
                     justify-content: space-between;
-                    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.438), transparent);
 
 
                     >div {
@@ -178,21 +223,52 @@ main {
 
         }
 
-        #cardBoxBack {
-            z-index: 50;
-            background-image: url(img/marble-effect-7808196_1280.jpg);
-            width: 480px;
-            height: 280px;
-            position: absolute;
-            top: -145px;
-            left: 70px;
+        .card-back {
+            transform: rotateY(180deg);
+            z-index: 1;
 
-            border-radius: 20px;
 
-            background-size: cover;
+            >div {
+                &:nth-of-type(1) {
+                    width: 100% !important;
+                    height: 50px;
+                    background-color: #000000;
+                    color: white;
+                    font-size: 24px;
+                    position: relative;
+                    top: 10px;
+                }
 
-            transition: 2s;
-            /* backface-visibility: hidden; */
+                &:nth-of-type(2) {
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    >span {
+                        align-self: flex-end;
+                    }
+
+                    >p {
+                        width: 100%;
+                        height: 80px;
+                        background-color: white;
+                        border-radius: 5px;
+                        color: black;
+                        text-align: center;
+                        padding: 5px;
+                    }
+
+                    color: white;
+                    font-size: 24px;
+                }
+
+                &:nth-of-type(3) {
+                    width: 150%;
+                    scale: .6;
+                    opacity: .5;
+                }
+            }
         }
     }
 }
@@ -215,36 +291,16 @@ main {
 
 
 .card-container {
-    width: 480px;
-    height: 280px;
     position: absolute;
     top: -145px;
     left: 70px;
     perspective: 1000px;
 }
 
-.card-box {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    background-size: cover;
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 1s ease;
-}
 
 .card-front {
-    background-image: url(img/water-5967218_1280.jpg);
     z-index: 2;
     transform: rotateY(0deg);
-}
-
-.card-back {
-    background-image: url(img/marble-effect-7808196_1280.jpg);
-    transform: rotateY(180deg);
-    z-index: 1;
 }
 
 .card-container.flipped .card-front {
@@ -253,11 +309,4 @@ main {
 
 .card-container.flipped .card-back {
     transform: rotateY(360deg);
-}
-
-
-p#cvvShow {
-    width: 100%;
-    height: 50px;
-    background-color: white;
 }

@@ -53,8 +53,8 @@ cvv.addEventListener("focus", () => {
     cardContainer.classList.toggle("flipped");
 });
 
-cvv.addEventListener("input" , (e)=>{
-    let x = cvv.value.slice(0,4)
+cvv.addEventListener("input", (e) => {
+    let x = cvv.value.slice(0, 4)
     cvvshow.innerHTML = x
 
 })
