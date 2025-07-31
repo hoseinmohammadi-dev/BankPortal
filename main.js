@@ -10,26 +10,22 @@ const cvvshow = document.querySelector("#cvvShow")
 // const cardBack = document.querySelector("#cardBoxBack")
 // const submitBtn = document.querySelector("form > input[type='submit']")
 
-let cNum = null
 cardNumberInp.addEventListener("input", () => {
-    let cNum = cardNumberInp.value.trim().slice(0, 16);
-    let cNum2 = cardNumberInp.value.trim().slice(4, 8)
-    let cNum3 = cardNumberInp.value.trim().slice(8, 12)
-    let cNum4 = cardNumberInp.value.trim().slice(12, 16)
+    const cNum = cardNumberInp.value.slice(0, 16); 
 
-    if (cNum.length <= 4) {
-        cardShow[0].value = cNum
+    const parts = [
+        cNum.slice(0, 4),
+        cNum.slice(4, 8),
+        cNum.slice(8, 12),
+        cNum.slice(12, 16)
+    ];
 
-    } else if (cNum.length <= 8) {
-        cardShow[1].value = cNum2
-    } else if (cNum.length <= 12) {
-        cardShow[2].value = cNum3
-    } else if (cNum.length <= 16) {
-        cardShow[3].value = cNum4
-    }
+    cardShow.forEach((input, i) => {
+        input.value = parts[i] || "";
+    });
 
-    if (cNum.length == 16) {
-        cardHolder.focus()
+    if (cNum.length === 16) {
+        cardHolder.focus();
     }
 });
 
@@ -37,7 +33,7 @@ cardHolder.addEventListener("input", () => {
     holder.textContent = cardHolder.value
 })
 
-    
+
 month.addEventListener('change', (e) => {
     document.querySelector("#monthShow").textContent = e.target.value
 })
@@ -48,7 +44,7 @@ years.addEventListener('change', (e) => {
 let isFlipped = false;
 const cardContainer = document.querySelector(".card-container");
 cvv.addEventListener("click", () => {
-    if(!isFlipped){
+    if (!isFlipped) {
         cardContainer.classList.toggle("flipped");
         isFlipped = true
     }
@@ -64,9 +60,9 @@ cvv.addEventListener("input", (e) => {
 const otherInp = document.querySelectorAll('.otherInp')
 
 otherInp.forEach(input => {
-    input.addEventListener('click',()=>{
-        if(isFlipped){
-        cardContainer.classList.toggle("flipped");
+    input.addEventListener('click', () => {
+        if (isFlipped) {
+            cardContainer.classList.toggle("flipped");
             isFlipped = false
         }
     })
