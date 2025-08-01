@@ -21,7 +21,7 @@ This project was created as a group effort to practice and demonstrate our skill
 
 > Replace the links below with actual images hosted in your repo or elsewhere.
 
-![Screenshot 1](./screenshots/homepage.png)
+![Screenshot 1](img/Screenshot%202025-08-01%20152549.png)
 ![Screenshot 2](./screenshots/transaction-page.png)
 
 ## 🔗 Live Demo
