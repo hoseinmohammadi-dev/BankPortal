@@ -51,16 +51,16 @@
             <form action="">
                 <div class="card-number">
                     <label for="">card number</label>
-                    <input type="text" maxlength="16" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <input class="otherInp" type="text" maxlength="16" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                 </div>
                 <div class="card-holder">
                     <label for="">card holders</label>
-                    <input type="text">
+                    <input class="otherInp" type="text">
                 </div>
                 <div class="expiration-date">
-                    <label for="">expiration date</label>
+                    <label>expiration date</label>
                     <div>
-                        <select name="" id="month">
+                        <select name="" id="month" class="otherInp">
                             <option value="month" disabled selected>month</option>
                             <option value="01">01</option>
                             <option value="02">02</option>
@@ -75,7 +75,7 @@
                             <option value="11">11</option>
                             <option value="12">12</option>
                         </select>
-                        <select name="" id="years">
+                        <select name="" id="years" class="otherInp">
                             <option value="" disabled selected>years</option>
                             <option value="21">2021</option>
                             <option value="22">2022</option>
