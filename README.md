@@ -26,7 +26,7 @@ This project was created as a group effort to practice and demonstrate our skill
 
 ## 🔗 Live Demo
 
-👉 [Click here to view the live demo](https://your-demo-link.com)  
+👉 [Click here to view the live demo](https://setarehomadian80.github.io/BankPortal/)  
 *(Replace this with your actual GitHub Pages or Netlify/Vercel link)*
 
 ## 📁 Folder Structure
